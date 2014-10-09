@@ -1,0 +1,682 @@
+%\documentclass[12pt]{article} % use larger type; default would be 10pt
+\documentclass[preprint]{revtex4-1} % APS style
+
+%\usepackage{titling} % Conflicts with aps styling
+\usepackage{appendix}
+%\usepackage{natbib}
+\usepackage{amssymb, amsmath} % for the \begin{align}... \end{align}
+                              % command 
+\usepackage[lofdepth, lotdepth]{subfig}
+\usepackage{graphicx}  % for the \includegraphics command
+% \setlength{\droptitle}{-6em}
+% \usepackage{array}
+% \usepackage{multirow}
+% \usepackage{setspace}
+% \doublespacing
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Exploration of a Hexagonal Structure on Saturn's Northern Pole}
+\author{Tianlu Yuan}
+\affiliation{University of Colorado Boulder}
+
+\begin{abstract}
+Images from Voyager revealed a hexagonal structure near Saturn's
+northern pole at $\approx 77^{\circ}$ north planetographic latitude.
+Ground based observations and images from the Hubble Space Telescope (HST) in the early 90s,
+along with Cassini data from recent years confirm that the structure still
+exists and appears relatively unchanged.  Over the decades spanning its
+discovery, several theoretical descriptions of the phenomena have been
+offered.  Allison et al. proposed a Rossby wave model sustained by
+perturbative forcing from a nearby vortex \cite{Allison1990}.  A more
+recent model by Barbosa Aguiar et al., based on barotropic instabilities caused by jets to the north
+and south of the hexagon's zonal flow, supported theory with
+experimental results by producing polygonal shapes in fluid flows
+within the laboratory \cite{BarbosaAguiar2010}.  Numerical simulations
+confirming this theory to an extent were also conducted
+\cite{MoralesJuberias2011}.  Here, I present an overview of the
+observational data collected on the Saturnian north polar hexagon.  I
+also discuss the two theoretical models that were put forth to explain the cause of its
+six-sided structure and their correctness in light of new
+observational data and experimental results.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+In the 1980s images of Saturn taken by Voyager led to Godfrey's surprising
+discovery of a hexagonal structure on the planet's north pole
+\cite{Godfrey1988}.  Now, over three decades later, Saturn's north
+polar hexagon remains, superficially unchanged and not entirely
+understood.  Voyager's iconic images proved a challenge to explain
+theoretically, but with additional data from ground
+based observations and the HST in the early
+90s, and images from the Cassini mission more recently, our knowledge
+of many physical parameters forming the hexagon has increased.  Along
+with observation, laboratory experiments and numerical simulations
+have helped foster greater understanding of the possible causes
+of the jet's six-sided shape.
+
+This paper first details the discovery of the hexagon by Godfrey and
+his initial measurements of the structure's velocity field and
+rotation rate \cite{Godfrey1988, Godfrey1990}.  A brief discussion of ground based and HST observations
+follow that support the earlier velocity measurements
+\cite{Caldwell1993, SanchezLavega1993}. I next provide a
+theoretical description of the hexagon as  
+a stationary Rossby wave, suggesting that its overall structure
+is sustained by perturbations from a nearby
+vortex observed in the Voyager images \cite{Allison1990}.  Finally, I discuss recent
+observational and experimental data and a different theoretical
+treatment of the hexagon based on barotropic instability theory
+\cite{Fletcher2008, Baines2009, BarbosaAguiar2010, MoralesJuberias2011}.
+I also give a basic overview of
+some important fluid dynamic concepts in the appendix.  Much of the
+technical terminology can be found there.  
+I hope that this provides some intuition for understanding 
+the theory, but a full, mathematical treatment of advanced concepts will be skipped.
+
+\section{Discovery and Initial Measurements}
+\label{sec:discv}
+The series of images of Saturn taken by Voyager 1 and 2 were mainly of Saturn's
+equatorial region.  In order to visualize the north
+pole, Godfrey accounted for the spherical distortion effect by polar projecting the
+equatorial images and stitching them together as seen in Figure
+\ref{fig:saturnHexs}.  He discovered a hexagonal
+structure at $77^{\circ}$ that appeared to be moving at
+$6.3 \pm 8 \times 10^{-8}$rad/s relative to the 
+Saturnian Radio (SR) rotation period  \cite{Godfrey1988}.  The SR
+period is thought to be due 
+to Saturn's magnetic field, which in turn reflects conditions within
+the conductive interior of the planet.  Hence, it is believed to give
+an accurate measure of the rotation rate of Saturn's interior and
+indicates that the hexagon is stationary relative to Saturn's interior
+rotation within uncertainties \cite{Godfrey1988}.  For the rest of
+this paper, all quoted velocites will be relative to the SR rotation.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/morales_3hexagons.jpg}
+  \caption{Images of the Saturn polar hexagon as viewed by Voyager
+    (left), Cassini-ISS (middle), and Cassini-VIMS (right).  The
+    impinging vortex is visible along the bottom left edge of the
+    Voyager-taken image \cite[fig~1]{MoralesJuberias2011}.} 
+  \label{fig:saturnHexs}
+\end{figure}
+
+Along with the hexagon, a large anticyclonic vortex along one of the
+edges of the hexagon can be seen in Figure \ref{fig:saturnHexs}, and
+its movement was associated with that of the hexagon itself
+\cite{Godfrey1988, MoralesJuberias2011}.  In a follow-up paper, Godfrey assumed the
+rotation rate of the hexagon to be equivalent to that of the vortex.
+By measuring the relative velocity of the vortex, he concluded the
+rotation period of the polar hexagon to be $-8.13 \pm 0.52 \times
+10^{-9}$rad/s, again suggesting an association between the hexagon
+and the planet's interior \cite{Godfrey1990}.
+
+By tracking invidual cloud features within the hexagon, Godfrey
+measured the mean zonal velocity of the flow at the center of the hexagon to be
+$\approx 100$m/s \cite{Godfrey1988}.  This result is a measure of the
+latitudinal velocity averaged over a zonal region via a nearest
+neighbor fit routine. Eastward movement was taken to be positive.  The
+mean zonal velocity falls off 
+moving latitudinally away from the center of the hexagon such that the
+the flow drops to $\approx -20$m/s to the south and $\approx 10$m/s to
+the north \cite{Godfrey1988}.  A latitudinal profile of the mean zonal
+velocity indicates an approximately Gaussian distribution as indicated
+in Figure \ref{fig:baines_zonalV}.  This
+velocity profile would prove to be important for theoretical
+treatments of the hexagon and will be a focus of discussion later
+\cite{BarbosaAguiar2010, Allison1990, MoralesJuberias2011}.
+
+Apart from the two Voyager flybys, observations of Saturn with ground
+based instruments and the HST served to confirm Godfrey's earlier
+analyses.  Using a 1.05m diameter telescope at Pic-du-Midi
+Observatory, a group led by Sanchez-Lavega observed Saturn's north
+pole over a period from July 1990 to December 1991
+\cite{SanchezLavega1993}.  During this time, Saturn held a favorable
+orientation relative to Earth that allowed views of the polar hexagon
+and the associated vortex.  The vortex's central longitude and latitude were
+measured and by combining the Pic-du-Midi data with Voyager's, a mean
+rotation rate of $-1.17 \times 10^{-8}$rad/s over the 11 year period was cited \cite{SanchezLavega1993}.  Over a similar time period, the HST
+also took several images of Saturn's polar region.  Focusing on
+measuring the position of the center of the vortex accurately,
+Caldwell's group defined the center of the planet as the center of the
+ellipse defined by Saturn's rings \cite{Caldwell1993}.  This was
+repeated for each image, and the longitude and latitude of the center
+of the polar spot was determined with high accuracy.  A long term
+drift rate of $-1.15 \times 10^{-8}$rad/s was reported, in fair
+agreement with both Godfrey's and Sanchez-Lavega's measurements
+\cite{Caldwell1993}.  It should be noted that all three
+measurements cited the uncertainty in the Saturnian rotation
+period as a possible systematic in their calculations.  Nevertheless,
+the agreement between Voyager, Pic-du-Midi, and the HST data strongly
+indicated that the hexagon was both a stationary and long term feature
+on Saturn.
+
+\section{Early Hypotheses}
+\label{sec:earlyThry}
+The Voyager observations led Godfrey to discuss four possible causes
+of the stationary rotation rate of the hexagon \cite{Godfrey1988}.
+First, stated as being unlikely, is that the rotation rate
+could just be a coincidence, since a stationary rotation rate is as good 
+as any other.  Another possibility is forcing, from either above or below,
+corresponding to Saturn's rotation, that creates the hexagonal wave.
+The third possibility regarded the hexagon as an aurora instead of
+cloud patterns, and the fourth that the radio rotation rate of Saturn
+is actually being generated by the hexagon instead of the planetary
+interior \cite{Godfrey1988}.  Aside from the second, these theories
+all seem fairly far fetched, which is understandable considering the
+amount of data existing at the time.  The third suggestion is easily
+refuted by Cassini imaging data \cite{Baines2009}, while the fourth
+would require a direct connection between the hexagon and Saturn's
+magnetic field.  If we assume that the hexagonal features are clouds,
+they would have to be ammonia crystals that could only occur within
+the troposphere, not the ionosphere, and its low conductivity would be unlikely to
+affect the magnetic field \cite{Gierasch1989}.
+
+The second possibility of forcing can be divided into either forcing
+from below or forcing from above.  Godfrey maintains that forcing from
+above could be due to aurora features close to the hexagon
+\cite{Godfrey1988}. However, this would suggest that there
+exists a similar hexagon in the Southern region due to symmetrical
+north-south aurora patterns as seen in Figure
+\ref{fig:saturnAurora}.   Images from Cassini, Figure \ref{fig:saturnPoles},
+again show that this is not the case \cite{Fletcher2008}.  Further, the
+atmospheric depth of the hexagon and its seasonal independence
+strongly suggests that solar effects are not its cause \cite{Baines2009}.  Forcing
+from below seems to be the last realistic hypothesis.  Gierasch
+supported this theory by positing thermal convection from the interior as
+the cause of the stationary hexagon \cite{Gierasch1989}.  The limited
+data on Saturn's interior, however, constrains this interpretation to
+opinion, not fact. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/Saturn-aurora.jpg}
+  \caption{Credit J. Trauger (JPL), NASA, \cite{APOD2001}.  Image of
+    Saturn's polar UV-aurora taken by the HST.} 
+  \label{fig:saturnAurora}
+\end{figure}
+
+\section{The Rossby Wave Theory}
+\label{sec:rossby}
+The first mathematical description of Saturn's hexagon was the Rossby 
+wave theory offered by Allison, Godfrey, and Beebe
+\cite{Allison1990}. Rossby waves are large scale planetary waves
+characterized by low frequency modes and a non-zero Coriolis parameter
+\cite{Pedlosky87, PlumbNotes}.  It is typically used in studies
+of large-scale, low-frequency waves in Earth's atmosphere, but
+Saturn's hexagon also exhibits its properties \cite{Allison1990}.  The large
+planetary scale of Saturn's hexagon, as well as its westward drift
+relative to the mean background zonal flow are distinguishing features
+of Rossby waves \cite{PlumbNotes}.  With regards to its westward phase drift,
+recall that the hexagon appears stationary while the jets within move
+at high velocities eastward, this is allowed by the Rossby wave
+dispersion relation (a measure of the wave velocity), given in Equation
+\ref{eq:rossbyDispersion}, which 
+indicates that stationary waves can exist if $U>0$ \cite{PlumbNotes}.
+Finally, it completes six patterns about a latitudinal region, thus
+its wavenumber is six.
+
+Two factors contribute to the
+restoring force of Rossby wave oscillations. First, the gradient of the
+planetary vorticity as defined by Equation \ref{eq:coriolisf}, $\beta = 2 \Omega
+\cos(\theta)/a$, where $\Omega$ 
+is the planetary rotation rate, $a$ 
+its radius, and $\theta$ the latitude.  Second, the negative
+curvature of the mean zonal flow in the meridional (y) direction, $-u_{yy}$
+\cite{Allison1990}. This can be thought of as the gradient of the
+relative vorticity discussed in the appendix.  The hexagon's zonal
+velocity profile can be modeled as a 
+Gaussian function of 
+the meridional distance from center \cite{Allison1990}.
+In the $\beta$-plane approximation, which takes a latitudinal strip
+around a sphere and approximates it as a plane, simplifying the
+spherical geometry into a planar geometry \cite{PlumbNotes}, it can be
+shown that the planetary vorticity gradient is negligible.  First note
+that the $1/e$ distance, $L_e$, from the mean in our Gaussian
+velocity profile is $\approx 1800$km \cite{Allison1990}.  In the $\beta$-plane
+approximation, for latitudes within this $L_e$ region the total
+vorticity gradient is dominated by the mean zonal flow
+\cite{Allison1990}.  Intuitively, this is because a Gaussian bell curve has
+maximal negative curvature near its mean.  The hexagon's velocity
+profile is well-modeled by a Gaussian as seen in Figure
+\ref{fig:zonalV_vorticityGrad}, and thus the planetary
+vorticity gradient can be neglected in the Rossby wave model \cite{Allison1990}.
+
+These approximations allows the calculation of the Rossby phase speed
+for barotropic waves (a brief exposition of barotropic fluids can be
+found in the appendix) \cite{Allison1990},
+\begin{align} 
+  \label{eq:rossbyDispersion}
+  c = U - \langle -U_{yy} \rangle_e \left(\frac{r}{n}\right)^2.
+\end{align}
+Here, $c$ is the \textit{horizontal} phase velocity, $n$ the zonal
+wave number, and $r$ the radius of the latitudinal circle, and $U$ is
+our Gaussian velocity profile \cite{Allison1990}.  For the hexagon,
+$r\approx 1.4 \times 10^7$m, $U\approx 100$m/s, $\langle -U_{yy}
+\rangle_e \approx 2.2 \times 10^{-11}$m$^{-1}$ s$^{-1}$ and $n=6$,
+giving $c \approx 0$ as expected for a stationary wave
+\cite{Allison1990}.  However, it is important to note that this
+approximation neglects the vertical structure of the wave and its
+strict meridional confinement \cite{Allison1990}.  Nevertheless, the
+vertical structure can be constrained such that the resulting wave
+equation has a solution.
+This solution includes a perturbation term, which is assumed to be the
+stationary vortex impinging on one side of the hexagon
+\cite{Allison1990}.  Furthermore, assuming a
+vertically trapped wave with a vertical structure that is
+related to the zonal wave number in a specific manner, it can be shown
+that the meridional 
+confinement of the hexagon is due to this pertubation \cite{Allison1990}.
+
+Although Saturn's vertical structure is not well understood, based on
+studies of Earth's 
+atmosphere we know that vertically trapped, stationary waves can be
+forced from below by 
+internal heating \cite{Allison1990}.  This
+effectively sets a lower boundary condition that is dependent on thermal variations
+in the vertically stratified layers of the atmosphere.  It is
+consistent with the possibility of internal forcing as suggested by
+Gierasch \cite{Gierasch1989}.  While the Rossby wave model describes
+the hexagon well phenomenologically, new data from the Cassini mission
+illustrates that the hexagon's structure cannot be due to the
+impinging vortex.
+
+\section{Observations by Cassini}
+\label{sec:cassini}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/fletcher_saturnPoles.jpg}
+  \caption{Saturn's polar temperatures as captured by CIRS.  The
+    northern hemisphere is on the 
+    right, the southern hemisphere on the left.  \textbf{A} and
+    \textbf{B} are at an altitude of 100 mbar in the troposphere,
+    \textbf{C} and \textbf{D} at 1 mbar in the stratosphere
+    \cite[fig~1]{Fletcher2008}.}
+  \label{fig:saturnPoles}
+\end{figure}
+
+In 2007 the Cassini probe orbited Saturn at a high latitudinal
+inclination and provided the first close-up images of Saturn's poles
+since Voyager.  Although the northern pole was shrouded by the
+seasonal tilt, the Cassini Composite Infrared Spectrometer (CIRS) took
+images of both the north and south poles at mid-infrared
+wavelengths \cite{Fletcher2008}.  It thus revealed the polar thermal
+distribution seen in Figure \ref{fig:saturnPoles}, and verified the
+existence of Saturn's north polar hexagon.  Similar ephemeral
+polygonal waves were seen in the south polar region, but none
+displayed the permanence of the north polar hexagon
+\cite{Fletcher2008}.  Notably, the CIRS images did not contain any resemblance of
+the impinging anticyclonic vortex as seen in earlier studies
+\cite{Fletcher2008}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/baines_hexThermalIR.jpg}
+  \caption{Polar projection of nine $5.1\mu$m images of Saturn's north
+    pole.  Images were obtained in darkness, thus clouds are seen as
+    dark in the left images as they block Saturn's $5.1\mu$m thermal
+    emission.  The photometrically inverted image on the right shows
+    clouds as bright \cite[fig~1]{Baines2009}.} 
+  \label{fig:vimsClouds}
+\end{figure}
+
+Images taken by the Cassini Visual-Infrared Mapping Spectrometer
+(VIMS) at $5.1\mu$m are displayed in Figure \ref{fig:vimsClouds}.
+Again, no evidence of the impinging vortex was observed
+\cite{Baines2009}.  Zonal wind profile
+measurements were made using VIMS images and cloud-tracking methods.
+The results are displayed in Figure \ref{fig:baines_zonalV}, and a
+maximum mean zonal wind velocity of $124.5 \pm 8.7$m/s was recorded
+\cite{Baines2009}.  An analysis conducted assuming constant absolute
+vorticity as a function of latitude showed disagreement between
+expected and observed mean zonal wind profiles.  In two dimensional
+fluids, absolute vorticity tends to be conserved, but in three
+dimensions it is the potential vorticity, defined in Equation
+\ref{eq:potentialVorticity}, that is conserved under the conditions
+given in the appendix \cite{Pedlosky87}.  Cassini
+thermal measurements combined with results from the zonal velocity
+profile measurements gave a mean potential vorticity value as a
+function of latitude.  The results showed that there is a step in
+potential vorticity at the hexagon's latitude \cite{Baines2009}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/baines_zonalWinds.jpg}
+  \caption{Mean zonal velocity
+    profile with Cassini data.  The dashed and dotted lines are model
+    wind velocities assuming a constant absolute vorticity.  Eastward
+    is taken to be positive along the vertical axis \cite[fig~3]{Baines2009}.} 
+  \label{fig:baines_zonalV}
+\end{figure}
+
+The disappearance of the impinging vortex indicates that the
+perturbative Rossby wave theory cannot be correct \cite{Fletcher2008}.
+Additionally, the fact that the 
+hexagonal structure exists deep into the troposphere and seems
+unaffected by seasonal variations rules out solar effects on the
+formation of the hexagon \cite{Baines2009}.  Finally, the
+disagreement between the hexagon's velocity profile and the velocity
+profile expected from a constant absolute vorticity indicates that the third,
+vertical dimension plays a crucial role the formation and stability of
+the hexagon.  Further, potential vorticity non-conservation indicates
+that one or more of the conditions listed in the appendix
+does not apply to the hexagon.  This
+hints that a new theoretical approach is needed to describe the
+hexagon.  Experimental and numerical studies of polygonal flows
+arising from barotropic instabilites are one such alternative
+\cite{Baines2009}.
+
+\section{Laboratory and Numerical Studies}
+\label{sec:expnum}
+Rotating polygonal fluid flows have been created in several laboratory
+environments.  One study by Jansson et al. demonstrated that stable
+polygons can be driven by the rotating bottom plate of a partially
+filled cylinder \cite{Jansson2006}.  They speculate that this symmetry
+breaking is triggered by the minute wobbling of the bottom plate
+\cite{Jansson2006}.  Another study led by Barbosa Aguiar cited
+barotropic instabilities in the surrounding zonal jets of the hexagon
+to be the driving force behinds its polygonal structure
+\cite{BarbosaAguiar2010}.  Barotropic instability can arise from
+horizontal shear forces in the flow, which convert
+kinetic energy of the zonal flow into kinetic energy of the resulting
+eddies \cite{BarbosaAguiar2010, Pedlosky87}. Using two
+different experimental setups, 
+they generated polygons in a rotating fluid as seen in Figure
+\ref{fig:exppolys}, and demonstrated the 
+existence of surrounding barotropically unstable regions similar to
+those measured around Saturn's hexagon \cite{BarbosaAguiar2010}.  A
+third numerical simulation also cites zonal jet instabilities as a
+direct link in the production of a stable polygon flow
+\cite{MoralesJuberias2011}.  These experimental results are worth
+elaborating.  Their analyses leads to the conclusion that Saturn's hexagon
+might well arise from similar flow instabilities as the polygons in
+Earth's experiments.
+
+\begin{figure}
+  \centering
+  \subfloat[Pentagon \cite{Jansson2006}]{\label{subfig:jansson}\includegraphics[width=0.3\textwidth]{Figures/jansson_pentagon.jpg}}
+  \subfloat[Ring setup \cite{BarbosaAguiar2010}]{\label{subfig:ring}\includegraphics[width=0.3\textwidth]{Figures/barbosaaguiar_ringHex.jpg}}
+  \subfloat[Disk setup \cite{BarbosaAguiar2010}]{\label{subfig:disk}\includegraphics[width=0.3\textwidth]{Figures/barbosaaguiar_diskHex.jpg}}
+  \caption{Polygons in rotating fluid flow experiments.  In
+    \subref{subfig:jansson} the experimental apparatus is a partially
+    filled cylinder with a rotating bottom \cite{Jansson2006}.  The
+    other two figures are taken from
+    \cite[fig~9,10]{BarbosaAguiar2010} and show results from the two
+    experimental setups used by Barbosa Aguiar.} 
+  \label{fig:exppolys}
+\end{figure}
+
+In the experiment by Jansson et al. the constraint parameters were
+the rotating velocity of the bottom plate and the height of the
+fluid.  Two different fluids were tested, ethyl alcohol and water, and
+both exhibited rotating polygon formation \cite{Jansson2006}.  The
+rotation rate of the polygons were all found to be much less than the
+rotation rate of the bottom plate, and the number of sides of the
+formed polygon increased with rotation frequency and decreased with fluid height
+\cite{Jansson2006}.  They attributed this spontaneous axial symmetry
+breaking to the wobbling of the bottom plate.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/barbosaaguiar_zonalVelocity.jpg}
+  \caption{From \cite[fig~1]{BarbosaAguiar2010}.  Voyager measured zonal velocity
+    profile and Saturn's vorticity gradient as a function of
+    latitude.  The horizontal dashed line at $\approx 77^{\circ}$ correspond to
+    the hexagon.  On the right plot, the dashed line
+    correspond to $\beta$, the solid line $u_{yy}$.} 
+  \label{fig:zonalV_vorticityGrad}
+\end{figure}
+
+A more direct analogue experiment to Saturn's hexagon involved testing
+the assumptions of barotropic instability as a possible cause of the
+hexagon.  A necessary condition of barotropic instability is the
+Rayleigh-Kuo criterion, 
+\begin{align} 
+  \label{eq:rayleighkuo}
+  \beta - u_{yy}<0,
+\end{align}
+where $\beta = df/dy$ and $u_{yy}$ is the curvature of the zonal
+velocity profile along the northward direction
+\cite{BarbosaAguiar2010}.  As seen in Figure 
+\ref{fig:zonalV_vorticityGrad}, the Rayleigh-Kuo criterion is violated
+on either side of the hexagon's latitude at $\approx 77^{\circ}$
+\cite{BarbosaAguiar2010}.  However, satisfying the Rayleigh-Kuo
+criterion alone is not sufficient for barotropic instability.  If it
+were, one might wonder as to why no polygonal shape occurs in the
+southern polar region or anywhere else on Saturn for that matter.
+After all it seems that the Rayleigh-Kuo criterion is violated in
+several regions of latitude below the hexagon.  A theoretical model
+based upon a linearised barotropic equation was solved for a measured,
+Saturnian zonal velocity profile and several radii of deformation, $L_D$
+\cite{BarbosaAguiar2010}.   The Rossby radius of deformation can be
+intuitively thought of as the horizontal length scale at which rotational effects
+(e.g. Coriolis force) become as important as buoyancy
+effects (e.g. gravity) \cite{Gill82}.  The solution to the linearised
+barotropic equation gave the wavenumber of maximal growth rate as a
+function of $L_D$.  In the case of a wavenumber of 6, the
+corresponding $L_D$ was found to be $2500$km, whereas $L_D$ for a jet
+at the hexagon's latitude is estimated to be $1135$km \cite{BarbosaAguiar2010,
+  MoralesJuberias2011}.  In the case of southern polar
+jets, solutions were found to peak at infinite wavenumbers
+\cite{BarbosaAguiar2010}. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/barbosaaguiar_setup.jpg}
+  \caption{The setup of the laboratory experiment conducted by Barbosa
+  Aguiar et al.  Two differentially-rotating sections were employed,
+  a ring and a disk, to force out a zonal jet profile
+  \cite[fig~4]{BarbosaAguiar2010}.}  
+  \label{fig:labSetup}
+\end{figure}
+
+In order to investigate this topic further, a laboratory model was
+developed using the two slightly differing setups shown in Figure
+\ref{fig:labSetup}. 
+Both involved cylinders 
+rotating at $\Omega$, but the distinguishing
+feature is the separate differentially-rotating section
+\cite{BarbosaAguiar2010}.  This section could either be a disk in
+contact with both the top and bottom of the fluid or a
+ring in contact with only the upper fluid surface, and its
+differential rotation forces out a jet-like flow from 
+the body fluid \cite{BarbosaAguiar2010}.  A non-zero $\beta$ parameter
+could be simulated by conical bottoms sloping away from the center.  The
+results for both setups  
+are shown in Figure \ref{fig:exppolys}, and their measured mean zonal
+flow velocities and vorticity gradients are shown in Figure
+\ref{fig:labFlowVorticity}.  These appear similar to the profiles
+observed for Saturn's hexagon, and violation of the Rayleigh-Kuo
+criterion occurs on either side of the jet flow \cite{BarbosaAguiar2010}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/barbosaaguiar_expResults.jpg}
+  \caption{The mean zonal velocity (left) and vorticity gradient
+    (right) as measured from analysis of flow images in laboratory
+    experiments using the ring setup.  On the right, $\beta=0$
+    corresponds to the dashed line, and violation of the Rayleigh-Kuo
+    criterion  is evident.  Also, note how the profiles appear
+    similar to the observed Saturnian hexagon's profile in Figure
+    \ref{fig:zonalV_vorticityGrad} \cite[fig~6]{BarbosaAguiar2010}.} 
+  \label{fig:labFlowVorticity}
+\end{figure}
+
+Additionally, a numerical simulation based on the Explicit Planetary
+Isentropic-Coordinate (EPIC) model demonstrated the possible formation
+of stable polygons as a result of instabilities arising from
+zonal jet nonlinear equilibrations \cite{MoralesJuberias2011}.  They
+found that the zonal wave number depended strongly on $u_{yy}$, as
+speculated in previous studies.  By initially seeding the simulation with
+a Gaussian velocity profile, polygons formed and propagated with
+velocities given by the Rossby wave dispersion relation, as suggested
+years earlier by Allison 
+et al. \cite{Allison1990, MoralesJuberias2011}.  However, their
+simulated propagation rate did not match the hexagon's observed
+rotation.  A modified 
+initial velocity profile was developed, with an additional term that
+``slowed down'' the wave propagation \cite{MoralesJuberias2011}.  The
+simulated jets violated the Rayleigh-Kuo criterion, and the dominant
+instability mode was speculated to be barotropic instabilities in
+agreement with the Barbosa Aguiar experiment discussed above
+\cite{MoralesJuberias2011}.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Although the exact cause behind Saturn's north polar hexagon
+still remains somewhat of a mystery, much progress has been made since
+its initial discovery to allow a better understanding of a startling
+phenomena.  Starting with Voyager and Godfrey's initial discovery, the
+hexagon first appeared alongside an impinging vortex, with a near zero
+rotation rate relative to Saturn's radio rotation period
+\cite{Godfrey1988}.  Images from
+the HST and Pic-du-Midi observatory in the early 90s confirmed both
+facts over ten years later \cite{Caldwell1993, SanchezLavega1993}.  The images 
+from Voyager bedazzled and baffled scientists, and many early
+hypotheses as to the cause of the stationary wave were
+speculated.  The most realistic of them, forcing from below due to internal
+convective heating, was propounded by both Godfrey and Gierasch
+\cite{Godfrey1988, Gierasch1989}, but it wasn't until the Rossby wave
+theory that a mathematical description of the nature of the hexagon
+was given \cite{Allison1990}.  With the Cassini mission entering into
+orbit in 2004, interest in Saturn's hexagon was revived.  It was
+discovered that the impinging vortex no longer existed, thus refuting
+the perturbative Rossby wave theory given by Allison et
+al. \cite{Baines2009}.  Laboratory experiments demonstrated the
+possibility of spontaneous polygonal formation in rotating fluids,
+with the cause attributed to barotropic instabilities arising in the
+zonal jet flows surrounding the polygons \cite{BarbosaAguiar2010,
+  Jansson2006, MoralesJuberias2011}.  The laboratory analogue were
+found to have zonal flows and vorticity gradients comparable to those observed on
+Saturn, and is probably the best explanation of Saturn's
+hexagon we have today.
+
+\appendix*
+\section{Fluid Dynamics in Brief}
+\label{app:fluidDyn}
+The following is a summary of some chapters from
+Pedlosky's \textit{Geophysical Fluid Dynamics} \cite{Pedlosky87},
+Batchelor's \textit{An Introduction to Fluid Mechanics}
+\cite{Batchelor67}, and Gill's \textit{Atmosphere-Ocean Dynamics} \cite{Gill82}.  
+
+A fluid flow is, at the most fundamental level, described by a
+\textit{velocity field}, \textbf{u}.  In the Eulerian methodology, this requires a velocity
+vector to be assigned at every point in the space of the fluid
+\cite{Batchelor67}.  It is then of interest to attack the problem of
+the time evolution the velocity field,
+\begin{align} 
+  \frac{d\textbf{u}}{dt} &=
+  \frac{\partial\textbf{u}}{\partial t}+\textbf{u}\cdot(\nabla\textbf{u}).
+\end{align}
+The continuity equation, along with conservation laws, gives an
+equation of motion for \textbf{u} in a non-rotating frame
+\cite{Pedlosky87}. In a rotating frame, the equation of motion is
+modified by the Coriolis acceleration to be,
+\begin{align}
+  \label{eq:eqm} 
+  \rho \left[\frac{d\textbf{u}}{dt} + 2 \boldsymbol{\Omega}\times
+    \textbf{u}\right]&= -\nabla p+ \rho\nabla\Phi+\mathcal{F},
+\end{align}
+where the density $\rho$ has been assumed constant, $\boldsymbol{\Omega}$
+is the planetary rotation, $p$ the pressure, $\Phi$ is the
+modified potential due to gravity and centripedal
+acceleration, and $\mathcal{F}$ is any additional frictional force
+\cite{Pedlosky87}.  From Equation \ref{eq:eqm}, we see that the
+Coriolis acceleration contributes a factor of $2\boldsymbol{\Omega}\times
+\textbf{u}$, estimated as $O(2\Omega U)$.  Taking the ratio of the
+relative acceleration $\frac{d\textbf{u}}{dt} \approx O(U^2/L)$ to the
+Coriolis acceleration gives the
+important \textit{Rossby number} $\epsilon=\frac{U}{2\Omega L}$
+\cite{Batchelor67, Pedlosky87}.  The Rossby number is an estimate of
+the relative importance of the Coriolis force on the velocity field.
+For small Rossby number, the Coriolis acceleration is important.  This
+is the case for large scale flows such as Saturn's hexagon as the
+relative acceleration becomes small in comparison to the Coriolis acceleration.
+
+% An important approximation to equation \ref{eq:eqm} is the \textit{geostrophic
+% approximation}.  If the Rossby number is small and the ratio of
+% frictional acceleration to the Coriolis acceleration is small,
+% Equation \ref{eq:eqm} can be simplified to first approximation as
+% \begin{align}
+%   \label{eq:simpleeqm}
+%   \rho 2\boldsymbol{\Omega} \times \textbf{u} = -\nabla p + \rho
+%   \nabla \Phi
+% \end{align}
+% \cite{Pedlosky87}.  With a few further order of magnitude assumptions,
+% the geostrophic approximation leads to a remarkable fact: the
+% horizontal velocity (in spherical coordinates this would be the
+% non-radial components of $\textbf{u}$) runs parallel to the lines of
+% constant pressure.  This is in direct contrast to the fluid flow in a
+% non-rotating system, and arises as a direct result of the balancing
+% interplay of $\nabla p$ and the Coriolis acceleration
+% \cite{Pedlosky87}.  It is the reason that atmospheric flows are
+% represented by isobars on a map.
+Given a velocity field, it is useful to define the \textit{vorticity} as
+$\boldsymbol{\omega} = \nabla \times \textbf{u}$ and work with
+equations of motion in terms of the vorticity instead
+\cite{Batchelor67, Pedlosky87}.  Note that there is a direct analogy
+between the relationship of vorticity and velocity field to that of
+the current density and magnetic field.  However, there is no causal
+relationship in the case of vorticity and velocity field; the
+vorticity is simply a useful and intuitive concept for understanding
+fluid flows.  The planetary vorticity is $2\boldsymbol{\Omega}$ and
+the component of the planetary vorticity normal to the planet's
+surface is called the Coriolis parameter \cite{Pedlosky87},
+\begin{align}
+  \label{eq:coriolisf}
+  f = 2\Omega \sin \theta.
+\end{align}
+By treating a thin latitudinal strip on a sphere
+as a geometrically flat plane, $f$ can be linearly approximated as $f
+\approx f_0+\beta_0y$, where $f_0 = 2\Omega \sin \theta_0$ and $\beta_0 =
+\frac{2\Omega}{r_0} \cos \theta_0$ \cite{Pedlosky87}.  This is called
+the $\beta$-plane 
+approximation, and is used extensively in atmospheric models,
+including that of Saturn's hexagon.
+
+In a rotating reference frame, the absolute vorticity is defined as
+$\boldsymbol{\omega_a} = \boldsymbol{\omega} + 2\boldsymbol{\Omega}$,
+the sum of relative and planetary vorticities.  Starting with Equation
+\ref{eq:eqm}, it is possible to derive the vorticity equation \cite{Pedlosky87}:
+\begin{align}
+  \label{eq:vorticityeq}
+  \frac{d\boldsymbol{\omega}}{dt} = \boldsymbol{\omega_a} \cdot \nabla
+  \textbf{u}- \boldsymbol{\omega_a} \nabla \cdot \textbf{u} +
+  \frac{\nabla \rho \times \nabla p}{\rho^2} + \nabla \times \frac{\mathcal{F}}{\rho}.
+\end{align}
+The third term on the right hand side is called the baroclinic
+vector.  A fluid is baroclinic if $\frac{\nabla \rho \times \nabla
+  p}{\rho^2} \neq 0$, and barotropic otherwise.  A barotropic fluid
+thus by definition must have coinciding surfaces of constant $\rho$
+and $p$, and a relation $\rho = \rho(p)$ can be found
+\cite{Pedlosky87}.  Instabilities that arise in both barotropic and
+baroclinic fluids play a crucial role in large scale flow dynamics and
+the wave patterns that arise in planetary atmospheres.  Several
+theoretical descriptions of the Saturnian north polar hexagon use
+instability theory as a starting point in modeling its dynamical
+behavior.
+
+Finally, one can define the potential vorticity as
+\begin{align}
+  \label{eq:potentialVorticity}
+  \Pi = \frac{\boldsymbol{\omega_a}}{\rho}\cdot \nabla \lambda,
+\end{align}
+where $\lambda$ is some property such as density or the potential
+temperature \cite{Pedlosky87}.  The potential vorticity is a useful
+concept as it allows vertical structure to be incorporated via the
+parameter $\lambda$ for three dimensional fluids.  It is 
+conserved under the following conditions: 
+\begin{itemize}
+  \item the fluid is barotropic or $\lambda$ is dependent on only
+    $\rho$ and $p$,
+  \item $\lambda$ is conserved for each fluid element,
+  \item the frictional force is negligible \cite{Pedlosky87}.
+\end{itemize}
+
+\bibliographystyle{plain}	% (uses file "plain.bst")
+\bibliography{refs}
+\end{document}
+

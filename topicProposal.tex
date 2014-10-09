@@ -1,0 +1,64 @@
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage{titling}
+\usepackage{natbib}
+\usepackage{amssymb, amsmath} % for the \begin{align}... \end{align}
+                              % command 
+\usepackage{graphicx}  % for the \includegraphics command
+% \setlength{\droptitle}{-6em}
+% \usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs} % for much better looking tables
+
+% Subtitle script taken from
+% http://tex.stackexchange.com/questions/50182/subtitle-with-the-maketitle-page
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\begin{document}
+
+\title{Exploration of a Hexagonal Structure on
+  Saturn's Northern Pole}
+\subtitle{Topic Proposal}
+\author{Tianlu Yuan}
+\maketitle
+
+In the 1980s images of Saturn taken by Voyager led to Godfrey's surprising
+discovery of a hexagonal structure on the planet's north pole
+\cite{Godfrey1988}.  The absolute rotation period of the hexagon was derived by
+Godfrey to be 10 hours 39 min $22.082\pm0.122$ s \cite{Godfrey1990},
+corresponding to a velocity of  $+109 \pm 6.9 \times 10^{-3}$m/s
+relative to the radio rotation period of the planet \cite{Godfrey1990}.
+This slow relative velocity of the hexagon led to the theory that the
+structure could be interpreted as a stationary Rossby wave as
+suggested by Allison, Godfrey, and Beebe \cite{Allison19900203}.
+
+With more recent data from the Cassini mission we know that the
+hexagonal structure still exists and appears relatively unchanged
+\cite{BarbosaAguiar2010}.  This, along with images taken by the Hubble
+Space Telescope, have fostered interest in the scientific community
+regarding the hexagon's formation.  Laboratory
+experiments on Earth have demonstrated that polygons can form on a
+rotating fluid in such a way that axial symmetry is broken
+``spontaneously'' \cite{Jansson2006}.  More complex models based on
+laboratory studies of the instability of vertical jets and shear
+layers and analysis of the saturnian zonal wind profile have led to the theory that Saturn's
+hexagonal structure is the result of a nonlinear equilibration 
+of unstable zonal jets\cite{BarbosaAguiar2010}.  
+
+In summary, our understanding of Saturn's hexagonal structure is still
+incomplete.  Numerous attempts have been undertaken to explain this
+phenomena through some combination of observation of Saturn and
+experimentation on Earth.  Understanding this fascinating phenomena
+will surely spur new research in geophysics, planetary physics,
+and fluid dynamics in the near future.
+
+\bibliographystyle{plain}	% (uses file "plain.bst")
+\bibliography{refs}
+\end{document}
+
